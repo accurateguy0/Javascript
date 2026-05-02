@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>9aStyles CSS</title>
+    <style>
+      .js-amazon-button{
+        background-color: rgb(255,216,20);
+        padding: 2px 20px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .js-request-uber{
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 3px;
+        font-size: Arial;
+        font-weight: bold;
+        border: none;
+        margin-right: 10px;
+      }
+      .js-schedule-uber{
+        background-color: rgb(230,230,230);
+        padding: 10px 15px;
+        border-radius: 3px;
+        font-weight: bold;
+        border: none;
+      }
+      
+      .buttontoggle{
+        background-color: rgb(230,230,230);
+        color: black;
+        
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: Arial;
+        border: none;
+        margin-right: 10px;
+        cursor: pointer;
+      } 
+      .is-toggled{
+        background-color: black;
+        color: white;
+      }
+    </style>
+      
+  </head>
+  <body>
+    <p>9aStyles CSS</p>
+    <p>Amazon button</p>
+    <button class="js-amazon-button">Add to Cart</button>
+    <p>Uber buttons</p>
+    <button class="js-request-uber">Request now</button>
+    <button class="js-schedule-uber">Schedule for later</button>
+    <p></p>
+    <button class="js-button">Test</button>
+    <p></p>
+    <button class="buttontoggle js-gaming-button" onclick="
+    onoff(document.querySelector('.js-gaming-button'));
+    ">Gaming</button>
+    <button class="buttontoggle js-music-button" onclick="
+    onoff(document.querySelector('.js-music-button'));
+    ">Music</button>
+    <button class="buttontoggle js-tech-button" onclick="
+    onoff(document.querySelector('.js-tech-button'));
+    ">Tech</button>
+    <script>
+      console.log(document.querySelector('.js-button').classList.contains('js-button'));
+      document.querySelector('.js-gaming-button').classList.add('is-toggled');
+      function onoff(name){
+        if(!name.classList.contains('is-toggled')){
+          document.querySelector('.is-toggled').classList.remove('is-toggled');
+           name.classList.add('is-toggled');
+           
+        }
+        else{
+          name.classList.add('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>

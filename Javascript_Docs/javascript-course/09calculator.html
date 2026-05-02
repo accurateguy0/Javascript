@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Calculator</title>
+    
+  </head>
+  <body>
+    <p class="js-display-math"></p>
+    <p>
+      <button onclick="
+      updateCalculation('1');
+      ">1</button>
+      <button onclick="
+      updateCalculation('2');
+      ">2</button>
+      <button onclick="
+      updateCalculation('3');
+      ">3</button>
+      <button onclick="
+      updateCalculation('+');
+      ">+</button>
+    </p>
+    <p>
+      <button onclick="
+      updateCalculation('4');
+      ">4</button>
+      <button onclick="
+      updateCalculation('5');
+      ">5</button>
+      <button onclick="
+      updateCalculation('6');
+      ">6</button>
+      <button onclick="
+      updateCalculation('-');
+      ">-</button>
+    </p>
+    <p>
+      <button onclick="
+      updateCalculation('7');
+      ">7</button>
+      <button onclick="
+      updateCalculation('8');
+      ">8</button>
+      <button onclick="
+      updateCalculation('9');
+      ">9</button>
+      <button onclick="
+      updateCalculation('*');
+      ">*</button>
+    </p>
+    <p>
+      <button onclick="
+      updateCalculation('0');
+      ">0</button>
+      <button onclick="
+      updateCalculation('.');
+      ">.</button>
+      <button onclick="
+      updateCalculation('=');
+      ">=</button>
+      <button onclick="
+      updateCalculation('/');
+      ">/</button>
+    </p>
+    <p>
+      <button onclick="
+      updateCalculation('Clear');
+      ">
+      Clear
+      </button>
+    </p>
+    <script>
+      let calculation=JSON.parse(localStorage.getItem('result')||'');
+      document.querySelector('.js-display-math').innerHTML= calculation;
+      function updateCalculation(number){
+        if(number ==='Clear'){
+          calculation=0;
+          document.querySelector('.js-display-math').innerHTML= calculation;
+          localStorage.setItem('result', JSON.stringify(calculation));
+        }
+        else if(number ==='='){
+          calculation= eval(calculation);
+          document.querySelector('.js-display-math').innerHTML= calculation;
+          localStorage.setItem('result', JSON.stringify(calculation));
+        }
+        else if(!calculation)
+        {
+         calculation=number;
+         document.querySelector('.js-display-math').innerHTML= calculation;
+          localStorage.setItem('result', JSON.stringify(calculation));
+        }
+        else{
+          calculation+=number;
+          document.querySelector('.js-display-math').innerHTML= calculation;
+          localStorage.setItem('result', JSON.stringify(calculation));
+          
+        }
+        
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html> <!--special code that allows to use modern features of code-->
+<!--style alllows us to writer CSS code-->
+<!--CSS-selector-->
+<html>
+  <head>
+    <title>Coin Flip Game</title>
+    
+  </head>
+  <body>
+    <p>Coin Flip Game</p>
+    <script>
+      const rnd = Math.random();
+      let result = "";
+      rnd < 0.5 ? result = 'heads': result ='tails'
+      let guess = 'heads';
+      result === guess ? console.log('You win!'): console.log('You lose!');
+    </script>
+  </body>
+</html>

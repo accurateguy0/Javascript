@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Todo list</title>
+    <style>
+      
+    </style>
+    <!--at the botton spaces--> 
+    <!-- padding aat the botton spaces--> 
+  </head>
+  <body>
+    
+    <script>
+      const numbers = [ 10, 20, 30]
+      numbers[2] = 99;
+      console.log(numbers);
+      console.log(getLastValue([1, 20,22,24,5]));
+      console.log(getLastValue(['hi','hello','good']));
+      console.log(arraySwap([1, 20,22,24,5]));
+      console.log(arraySwap(['hi','hello','good']));
+      for(i=0;i<= 10;i+=2){
+        console.log(i);
+      }
+      for(i=5;i>= 0;i--){
+        console.log(i);
+      }
+      let array = [1, 2 ,3 ,4];
+      let darray = [];
+      for(i=0;i<= array.length-1;i++){
+         darray[i]= array[i]*2;
+      }
+      console.log(darray);
+      console.log(addOne([1,2,3]));
+      console.log(addOne([-2,-1,0,99]));
+      console.log(addNum([1,2,3],2));
+      console.log(addNum([1,2,3],3));
+      console.log(addNum([-2,-1,0,99],2));
+      console.log(addArrays([1,1,2],[1,1,3]));
+      console.log(addArrays([1,2,3],[4,5,6]));
+      console.log(countPositive([1,-3,5]));
+      console.log(countPositive([-2,3,-5,7,10]));
+      console.log(minMax([]));
+      console.log(minMax([3]));
+      console.log(countWords(['apple','grape','apple','apple']));
+      function countWords(words){
+        let count = {};
+        let grapecount = 0;
+        let applecount = 0;
+        for(i=0;i<=words.length-1;i++){
+            count[words[i]] = 0;
+            
+        }
+        for(i=0;i<=words.length-1;i++){
+            count[words[i]] += 1;
+            
+        }
+        return count;
+      }
+      function minMax(nums){
+        let minmax = {
+          min: null,
+          max: null
+        };
+        let max = nums[0];
+        let min = nums[0];
+        for(i=0;i<=nums.length-1;i++){
+          if(max<nums[i]){
+            max = nums[i];
+          }
+          if(min>nums[i]){
+            min = nums[i];
+          }
+        }
+          minmax.min= min;
+          minmax.max= max;
+        return minmax;
+      }
+      
+      function countPositive(nums){
+        let count = 0;
+        for(i=0;i<=nums.length-1;i++){
+          if(nums[i]>0){
+            count++;
+          }
+        }
+        return count;
+      }
+      function addArrays(array1,array2){
+        let coarray = array1;
+        for(i=0;i<= array1.length-1;i++){
+         coarray[i]= array1[i] +array2[i];
+        }
+        return coarray;
+      }
+      function addNum(array,num){
+        let plusarray = array;
+        for(i=0;i<= array.length-1;i++){
+        plusarray[i]= array[i]+num;
+        }
+        return plusarray;
+      }
+      function addOne(array){
+        let plus1array = array;
+        for(i=0;i<= array.length-1;i++){
+        plus1array[i]= array[i]+1;
+      }
+        return plus1array;
+      }
+      function getLastValue(array){
+        const lastIndex = array.length-1
+        return array[lastIndex];
+      }
+      function arraySwap(array){
+        let arraySwapped = array;
+        let value = arraySwapped[arraySwapped.length-1];
+        arraySwapped[arraySwapped.length-1] = arraySwapped[0];
+        arraySwapped[0] = value;
+        return arraySwapped;
+      }
+    </script>
+  </body>
+</html>

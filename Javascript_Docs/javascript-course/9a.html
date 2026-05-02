@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>DOM 9a</title>
+   
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-9b-button">9b</button>
+    <p></p>
+    <button onclick="
+    document.querySelector('.js-move').innerHTML = 'You chose: heads';
+    ">heads</button>
+    <button onclick="
+    document.querySelector('.js-move').innerHTML = 'You chose: tails';
+    ">tails</button>
+    <p class="js-move"></p>
+    <p></p>
+    <input placeholder="Name" class="js-name" onkeydown="
+      displayNameHandler(event);
+    ">
+    <button onclick="
+      displayName();
+    ">Submit</button>
+    <p class="js-display-name"></p>
+    <script>
+      console.log(document.querySelector('button'));
+      document.querySelector('.js-9b-button').innerHTML = '9b done!';
+      function displayNameHandler(event){
+        if(event.key === 'Enter')
+        {
+          displayName();
+        }
+      }
+      function displayName(){
+        const text = document.querySelector('.js-name');
+        document.querySelector('.js-display-name').innerHTML = `Your name is ${text.value}`;
+      }
+    </script>
+  </body>
+</html>

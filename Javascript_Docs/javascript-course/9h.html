@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Text Box</title>
+   
+  </head>
+  <body>
+    <p>text box</p>
+    <input onkeyup="
+      writeText(event);
+    "
+     placeholder="Type something">
+    <p class="js-display-text"></p>
+    <script>
+      function writeText(event){
+        if(event.key === 'Backspace'){
+          document.querySelector('.js-display-text').innerHTML -= ``;
+        }
+        else{
+          document.querySelector('.js-display-text').innerHTML += `${event.key}`;
+        }
+        
+      }
+    </script>
+  </body>
+</html>

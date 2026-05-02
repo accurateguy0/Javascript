@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>12a</title>
+    <style>
+      
+    </style>
+    
+  </head>
+  <body>
+    <p>12a</p>
+    <button class="but">Start</button>
+    <p></p>
+    <button class="Load">Add to cart</button>
+    <p class="text"></p>
+    <script>
+      document.querySelector('.Load').addEventListener('click',()=>{
+        FLoading();
+      });
+      document.querySelector('.but').addEventListener('click',()=>{
+        document.querySelector('.but').innerHTML = 'Loading...';
+        setTimeout(()=>{
+          document.querySelector('.but').innerHTML = 'Finished';
+        }, 1000);
+      });
+      let add = ()=>{
+        console.log(2+3);
+      };
+      add();
+      add();
+      runTwice(function(){console.log('12b')});
+      runTwice(add);
+      let isLoading = false;
+      let timeoutID;
+      function FLoading(){
+        document.querySelector('.text').innerHTML = 'Added';
+        if(!isLoading){
+          isLoading = true;
+          timeoutID = setTimeout(()=>{
+          document.querySelector('.text').innerHTML = '';
+          isLoading = false;
+          }, 2000);
+        }
+        else{
+          clearTimeout(timeoutID);
+          timeoutID = setTimeout(()=>{
+          document.querySelector('.text').innerHTML = '';
+          isLoading = false;
+          }, 2000);
+        }
+      
+      }
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+    </script>
+  </body>
+</html>

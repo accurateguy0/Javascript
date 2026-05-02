@@ -1,0 +1,53 @@
+<!DOCTYPE html> <!--special code that allows to use modern features of code-->
+<!--style alllows us to writer CSS code-->
+<!--CSS-selector-->
+<html>
+  <head>
+    <title>Basketball</title>
+    
+  </head>
+  <body>
+    <script>
+      const basketball = {
+        name: 'Basketball',
+        price: 2095,
+        ['delivery-time']: '3 days'
+      };
+      basketball.price += 2095;
+       console.log(basketball);
+      const shirt = {
+        name: 'Shirt',
+        price: 3095,
+        ['delivery-time']: '3 days'
+      };
+      const tShirt = {
+        name: 'Shirt',
+        price: 3095,
+        ['delivery-time']: '3 days'
+      };
+      function comparePrice(product1, product2){
+        if(product1 > product2){
+          return product2;
+        }
+        
+        else{
+          return product1;
+        }
+      }
+      console.log(comparePrice(shirt, tShirt));
+      function isSameProduct(product1, product2){
+        const{name1} = product1.name;
+        const{name2} = product2.name;
+        const{price1} = product1.price;
+        const{price2} = product2.price;
+        if(name1 === name2 && price1 === price2){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+      console.log(isSameProduct(shirt, tShirt));
+    </script>
+  </body>
+</html>

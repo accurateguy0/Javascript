@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>DOM projects</title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+      .calculate-button{
+        background-color: green;
+        color: white;
+        padding: 12px 15px;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+      }
+      .cost-input{
+        font-size: 15px;
+        /*padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;*/
+        padding: 10px;
+      }
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px; 
+      }
+      
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+        
+      }
+      .error{
+        color: red;
+      }
+      
+    </style>
+    <!--at the botton spaces--> 
+    <!-- padding aat the botton spaces--> 
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="
+    subscribe();
+    " class='js-subscribe-button subscribe-button'>Subscribe</button>
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+    handleCostKeyDown(event);
+    ">
+    <button onclick="
+    CalculateTotal();" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+      String(25);
+      console.log('25'- 5);
+      console.log('25'+ 5);
+      window.document
+      window.console.log('window'); // we don't have to type window because it's built in
+      window.alert
+      function handleCostKeyDown(event){
+         // onclick, onkeydown event listener
+        if(event.key === 'Enter'){
+          CalculateTotal();
+    }
+      }
+      function CalculateTotal(){
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+        if(cost < 40){
+          cost*=100;
+          cost+=1000;
+          cost/=100;
+        }
+        if(inputElement.value < 0){
+          document.querySelector('.js-total-cost').classList.add('error');
+          document.querySelector('.js-total-cost').innerHTML =`Error: cost cannot be less than $0`;
+        }
+        else{
+          document.querySelector('.js-total-cost').innerHTML =`$${cost}`;
+        console.log(inputElement.value);
+        }
+        
+      }
+      function subscribe(){
+        const buttonElement = document.querySelector('.js-subscribe-button');
+    if(buttonElement.innerText === 'Subscribe'){ // innerText property gives us text without spaces
+      buttonElement.innerHTML = 'Subscribed';
+      buttonElement.classList.add('is-subscribed'); // classList is an object itself, .add adds a class
+      
+    }
+    else{
+      buttonElement.innerHTML = 'Subscribe';
+      buttonElement.classList.remove('is-subscribed');
+    }
+      }
+    </script>
+  </body>
+</html>

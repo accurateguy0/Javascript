@@ -1,0 +1,19 @@
+body{
+        background-color: black;
+        color: white;
+        font-size: 20px;
+      }
+      .js-black-button{
+        background-color: rgb(63, 58, 58);
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+      }
+      .js-orange-button{
+        background-color: orange;
+        color: rgb(255, 255, 255);
+        padding: 5px 10px;
+        border-radius: 30px;
+        border: none;
+      }

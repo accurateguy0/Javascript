@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Arrays & Loops</title>
+    <style>
+      
+    </style>
+    <!--at the botton spaces--> 
+    <!-- padding aat the botton spaces--> 
+  </head>
+  <body>
+    <p>11o exercise</p>
+    <script>
+      let array1 = ['hello','world','search', 'good'];
+      let array2 = ['not','found'];
+      let array = array2;
+      let foods = ['egg','apple','egg','egg','ham'];
+      console.log(findIndex(['green','red','blue','red'],'red'));
+      console.log(findIndex(['green','red','blue','red'],'yellow'));
+      console.log(removeEgg(foods));
+      console.log(foods);
+      console.log(unique(['green','red','blue','red']));
+      console.log(unique(['red','green','green','red']));
+      for(let i=0;i<=20;i++){
+        if(i % 3===0 && i % 5===0){
+          console.log('FizzBuzz');
+          continue;
+        }
+        else if(i % 3===0){
+          console.log('Fizz');
+          continue;
+        }
+        else if(i % 5===0){
+          console.log('Buzz');
+          continue;
+        }
+        console.log(i);
+      }
+      function removeEgg(foods){
+        let noEgg = [];
+        eggCount = 0;
+        let revFoods = foods.slice(0, foods.length);
+        revFoods.reverse();
+        for(let i=0;i<revFoods.length;i++){
+          
+          if(revFoods[i] === 'egg' && eggCount < 2){
+            eggCount++;
+            continue;
+          }
+          noEgg.push(revFoods[i]);
+        }
+        noEgg.reverse();
+        return noEgg;
+      }
+      function findIndex(array,word){
+        for(let i=0;i<array.length;i++){
+          if(array[i] === word){
+            return i;
+          }
+          
+            
+          
+        }
+        return -1;
+      }
+      function unique(array){
+        let uarray = [];
+        for(let i=0;i<array.length;i++){
+          let word = array[i];
+          if(findIndex(uarray, word)=== -1){
+            uarray.push(word);
+          }
+        }
+        return uarray;
+      }
+      for(let i=0;i<array.length;i++){
+        if(array[i] === 'search'){
+          console.log(i);
+          break;
+        }
+        
+        
+      }
+    </script>
+  </body>
+</html>

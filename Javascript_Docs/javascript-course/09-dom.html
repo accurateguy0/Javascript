@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Variables</title>
+   
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+    <script>
+      console.log(document.querySelector('button'));
+      const buttonElement = document.querySelector('.js-button').innerHTML = 'Changed';
+      console.log(buttonElement);
+      /*console.log(document.title);
+      document.title = 'Changed';
+      console.log(document.body);
+      console.log(typeof document.body); // it's an object
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = ' <button>Good job!</button>';*/
+      /*document.body.innerHTML = 'hello';
+      document.title = 'Good job!';*/
+    </script>
+  </body>
+</html>

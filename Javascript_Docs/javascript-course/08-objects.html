@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!--special code that allows to use modern features of code-->
+<!--functions let us reuse code-->
+<!--CSS-selector-->
+<html>
+  <head>
+    <title>Objects</title>
+    
+  </head>
+  <body>
+    <script>
+      // const product = {
+      //   name: 'sock',
+      //   price: 1090
+      // }; // this is an object
+      // console.log(product);
+      // console.log(product.name);
+      // product, name = 'cotton socks';
+      // product.newProperty = true;
+      // console.log(product);
+      // delete product.newProperty;
+      // console.log(product);
+      // const product2 = {
+      //   name: 'shirt',
+      //   ['delivery-time']: '1 day',
+      //   rating: {
+      //     stars: 4.5,
+      //     count: 87
+      //   },
+      //   fun: function function1(){
+      //     console.log('function inside object');
+      //   }
+      // };
+      // console.log(product2.name);
+      // console.log(product2['name']);
+      // console.log(product2.rating.count);
+      // product2.fun();
+      // // we use JSOn when we store data and send information across computers
+      // console.log(JSON.stringify(product2));
+      // console.log(JSON.parse(JSON.stringify(product2)));
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase()); // auto-boxing
+      const object1 = { // even if we use const we can change the variable inside the object
+        message: 'hello',
+      };
+      const object2 = object1;
+      const object3 = { // even if we use const we can change the variable inside the object
+        message: 'hello',
+      };
+      //objects are references, so you can't compare them
+      console.log(object3 === object1);
+      //const message = object3.message;
+      const{message} = object3;
+      console.log(message);
+      const object5 = {
+        //message: message
+        message,
+        // method: function function1() {
+        //   console.log('methof');
+        // }
+        method(){
+          console.log('methof');
+        }
+      }
+    </script>
+  </body>
+</html>

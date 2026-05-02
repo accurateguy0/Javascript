@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!--special code that allows to use modern features of code-->
+<!--style alllows us to writer CSS code-->
+<!--CSS-selector-->
+<html>
+  <head>
+    <title>Variables</title>
+    <p>09-Cart Quantity</p>
+  </head>
+  <body>
+    <button onclick="
+      console.log(`Cart quantity:${cartQuantity}`)">
+      Show Quantity</button>
+    <button onclick="
+    updateCartQuantity(1);
+    ">Add to Cart</button>
+    <button onclick="
+    updateCartQuantity(2);
+    ">+2</button>
+    <button onclick="
+    updateCartQuantity(3);
+    ">+3</button>
+    <button onclick="
+    updateCartQuantity(4);
+    ">+4</button>
+    <button onclick="
+    updateCartQuantity(5);
+    ">+5</button>
+    <button onclick="
+    updateCartQuantity(-1);
+    ">Remove from cart</button>
+    <button onclick="
+    updateCartQuantity(-2);
+    ">-2</button>
+    <button onclick="
+    updateCartQuantity(-3);
+    ">-3</button>
+    <button onclick="
+    updateCartQuantity(0);
+    ">Reset Cart</button>
+    <p class="js-display-cart">Cart Quantity: 0</p>
+    
+    <script>
+      let cartQuantity =0;
+      function updateCartQuantity(amount){
+        if(amount === 0){
+          cartQuantity = 0;
+        }
+        else if(cartQuantity < 10 && amount > 0){
+          cartQuantity+=amount;
+          document.querySelector('.js-display-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+        }
+        else if(cartQuantity > 0 && amount < 0){
+          cartQuantity+=amount;
+          document.querySelector('.js-display-cart').innerHTML = `Cart Quantity: ${cartQuantity}`;
+        }
+        else if(cartQuantity >= 10){ 
+          alert(`You can't add more`);
+        } 
+        else if(cartQuantity <= 0){ 
+          alert(`You can't remove more`);
+        } 
+        console.log(`Cart quantity:${cartQuantity}`);
+      }
+    </script>
+  </body>
+</html>

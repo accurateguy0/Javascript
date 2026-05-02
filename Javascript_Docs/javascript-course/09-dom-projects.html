@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>DOM projects</title>
+   
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="
+    subscribe();
+    " class='js-subscribe-button'>Subscribe</button>
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    handleCostKeyDown(event);
+    ">
+    <button onclick="
+    CalculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+      String(25);
+      console.log('25'- 5);
+      console.log('25'+ 5);
+      window.document
+      window.console.log('window'); // we don't have to type window because it's built in
+      window.alert
+      function handleCostKeyDown(event){
+         // onclick, onkeydown event listener
+        if(event.key === 'Enter'){
+          CalculateTotal();
+    }
+      }
+      function CalculateTotal(){
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+        if(cost < 40){
+          cost*=100;
+          cost+=1000;
+          cost/=100;
+        }
+        document.querySelector('.js-total-cost').innerHTML =`$${cost}`;
+        console.log(inputElement.value);
+      }
+      function subscribe(){
+        const buttonElement = document.querySelector('.js-subscribe-button');
+    if(buttonElement.innerText = 'Subscribe'){ // innerText property gives us text without spaces
+      buttonElement.innerHTML = 'Subscribed';
+    }
+    else{
+      buttonElement.innerHTML = 'Subscribe';
+    }
+      }
+    </script>
+  </body>
+</html>
